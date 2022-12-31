@@ -8,9 +8,13 @@ const contactNav = document.getElementById("contact");
 const renderPage = (page) => {
 	content.innerHTML = page;
 };
-[homeNav, menuNav, contactNav].forEach((menuItem, i) => {
+const navBar = [homeNav, menuNav, contactNav];
+
+navBar.forEach((menuItem, i) => {
 	menuItem.addEventListener("click", () => {
+		navBar.forEach((menuItem) => menuItem.classList.remove("hovered"));
 		renderPage(pages[i]);
+		menuItem.classList.add("hovered");
 	});
 });
 renderPage(home);

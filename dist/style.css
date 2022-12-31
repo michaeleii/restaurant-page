@@ -48,7 +48,7 @@ body {
 	color: var(--accent-color);
 }
 
-.tab-list li.hovered {
+.hovered {
 	color: var(--accent-color);
 }
 
