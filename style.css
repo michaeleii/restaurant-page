@@ -47,19 +47,110 @@ body {
 .tab-list li:hover {
 	color: var(--accent-color);
 }
+
+.tab-list li.hovered {
+	color: var(--accent-color);
+}
+
 #content {
 	display: flex;
-	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	gap: 20px;
+	gap: 30px;
+}
+#content.menu {
+	flex-direction: row;
+	flex-wrap: wrap;
 }
 .card {
-	font-size: 1.25em;
+	font-size: 1.2em;
 	font-family: "Varela Round", sans-serif;
 	width: 1000px;
-	padding: 5px 30px 20px;
+	border-radius: 10px;
+	padding: 20px;
 	border: 10px solid var(--accent-color);
 	color: var(--bg-color);
 	background-color: var(--primary-color);
+	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.product-img {
+	display: block;
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.product-card {
+	width: 400px;
+	height: 400px;
+	padding: 10px 30px;
+	transition: all 1.25s;
+	transform-style: preserve-3d;
+	z-index: 0;
+}
+.product-card:hover {
+	transform: rotateY(180deg);
+}
+.product-title {
+	text-align: center;
+}
+.product-info {
+	font-size: 1.25rem;
+}
+
+.front,
+.back {
+	border-radius: inherit;
+	width: 400px;
+	height: 400px;
+	backface-visibility: hidden;
+	position: absolute;
+}
+.front {
+	color: var(--bg-color);
+	background-color: var(--primary-color);
+	z-index: 1;
+}
+.back {
+	transform: rotateY(180deg);
+	color: var(--bg-color);
+	background-color: var(--primary-color);
+	z-index: 2;
+}
+.contact-card {
+	width: 525px;
+}
+.form {
+	display: flex;
+	flex-direction: column;
+}
+.form input,
+textarea {
+	padding: 10px;
+	font-size: 1.25rem;
+	font-family: "Varela Round", sans-serif;
+	width: 500px;
+	margin-bottom: 20px;
+	background-color: var(--bg-color);
+	color: var(--primary-color);
+	border: none;
+}
+.form label {
+	margin-bottom: 10px;
+}
+
+.form input:focus-visible,
+textarea:focus-visible {
+	outline: var(--accent-color) solid 2px;
+	border-radius: 0px;
+}
+.btn {
+	align-self: center;
+	width: 200px;
+	border-radius: 10px;
+	font-size: 1em;
+	padding: 10px 3px;
+	border: none;
+	background-color: var(--bg-color);
+	color: var(--primary-color);
 }
